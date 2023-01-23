@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+
+    .me a {
+        color: #9c88ff;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+            color: #7f6cdd;
+        }
+    }
+    .warning {
+        width: 19rem;
+        background-color: white;
+        text-align: center;
+        padding: 1rem 0.5rem;
+        border-bottom: 1px solid #bbb;
+        position: absolute;
+        top: 5vh;
+        transition: all 0.7s ease-in-out;
+        opacity: 0;
+        overflow: hidden;
+
+        &.on {
+            opacity: 1;
+        }
+
+        @media screen and (min-width: 425px) {
+            width: 25rem;
+        }
+
+        h1 {
+            text-transform: uppercase;
+        }
+        p {
+            margin: 0.8rem;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #9c88ff;
+            box-shadow: var(--box-shadow);
+            color: #fff;
+            border: 0;
+            font-size: 16px;
+            margin: 10px 0 30px;
+            padding: 10px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #7f6cdd;
+            }
+        }
+    }
+
+    .container {
+        width: 350px;
+
+        h1 {
+            letter-spacing: 1px;
+            margin: 0;
+            color: #2e75cc;
+        }
+
+        h3 {
+            border-bottom: 1px solid #bbb;
+            padding-bottom: 10px;
+            margin: 40px 0 10px;
+        }
+
+        h4 {
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .inc-exp-container {
+            background-color: #fff;
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+
+            & > div {
+                flex: 1;
+                text-align: center;
+            }
+
+            & > div:first-of-type {
+                border-right: 1px solid #dedede;
+            }
+
+            .money {
+                font-size: 20px;
+                letter-spacing: 1px;
+                margin: 5px 0;
+
+                &.plus {
+                    color: #2ecc71;
+                }
+
+                &.minus {
+                    color: #c0392b;
+                }
+            }
+        }
+
+        .transactions {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 40px;
+
+            li {
+                background-color: #fff;
+                box-shadow: var(--box-shadow);
+                color: #333;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                padding: 10px;
+                margin: 10px 0;
+
+                &.plus {
+                    border-right: 5px solid #2ecc71;
+                }
+
+                &.minus {
+                    border-right: 5px solid #c0392b;
+                }
+
+                &:hover .delete-btn {
+                    opacity: 1;
+                }
+            }
+
+            .delete-btn {
+                cursor: pointer;
+                background-color: #e74c3c;
+                border: 0;
+                color: #fff;
+                font-size: 20px;
+                line-height: 20px;
+                padding: 2px 5px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(-100%, -50%);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+        }
+
+        form {
+            label {
+                display: inline-block;
+                margin: 10px 0;
+            }
+
+            input[type="text"],
+            input[type="number"] {
+                border: 1px solid #dedede;
+                border-radius: 2px;
+                display: block;
+                font-size: 16px;
+                padding: 10px;
+                width: 100%;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type="number"] {
+                -moz-appearance: textfield;
+            }
+
+            .btn {
+                cursor: pointer;
+                background-color: #9c88ff;
+                box-shadow: var(--box-shadow);
+                color: #fff;
+                border: 0;
+                display: block;
+                font-size: 16px;
+                margin: 10px 0 30px;
+                padding: 10px;
+                width: 100%;
+
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: #7f6cdd;
+                }
+            }
+        }
+
+        .btn:focus,
+        .delete-btn:focus,
+        .warning-btn:focus {
+            outline: 0;
+        }
+    }
+}
