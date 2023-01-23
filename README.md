@@ -1,2 +1,2 @@
-# controle-de-despesas
-Controle e despesas feito com JavaScript.
+# Controle de Despesas
+Feito com HTML, SCSS & JavaScript.
